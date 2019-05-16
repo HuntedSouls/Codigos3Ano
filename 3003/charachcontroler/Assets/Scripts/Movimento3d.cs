@@ -6,12 +6,18 @@ public class Movimento3d : MonoBehaviour {
 
     CharacterController controle;
     public float velocidade = 3.0f;
+    Vector3 movimento = Vector3.zero;
+    public float alturaPulo = 5.0f;
+    public float gravidade = -10.0f;
 
     IEnumerator Pular()
     {
         Vector3 pulo = new Vector3(0, 5, 0);
-        controle.Move(pulo);
-        yield return null;
+        for (int i =0;i<10;i++)
+        {
+            controle.Move(pulo/10);
+            yield return new WaitForSeconds(0.1f);
+        }
 
     }
 
@@ -24,12 +30,21 @@ public class Movimento3d : MonoBehaviour {
 	void Update () {
         float direcaoX = Input.GetAxis("Horizontal");
         float direcaoZ = Input.GetAxis("Vertical");
-        Vector3 movimento = new Vector3(direcaoX,0,direcaoZ);
-        controle.SimpleMove(movimento*velocidade);
+        movimento.x = direcaoX;
+        movimento.z = direcaoZ;
 
-        if (Input.GetKeyDown(KeyCode.Space) && controle.isGrounded)
+        if (controle.isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(Pular());
+            movimento.y = alturaPulo;
         }
+        else
+        {
+            movimento.y += gravidade * Time.deltaTime;
+        }
+
+        
+
+        controle.Move(movimento*velocidade*Time.deltaTime);
+        
 	}
 }
