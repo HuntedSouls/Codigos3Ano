@@ -5,9 +5,9 @@ using UnityEngine;
 public class Movimento3d : MonoBehaviour {
 
     CharacterController controle;
-    float altura = 20.0f;
-    float gravidade = -30.0f;
-
+    float altura = 5.0f;
+    float gravidade = -10.0f;
+    Vector3 movimento = Vector3.zero;
 
     // Use this for initialization
     void Start () {
@@ -18,11 +18,15 @@ public class Movimento3d : MonoBehaviour {
 	void Update () {
         float movX = Input.GetAxis("Horizontal");
         float movZ = Input.GetAxis("Vertical");
-        Vector3 movimento = new Vector3(movX,0,movZ);
+        movimento.x = movX;
+        movimento.z = movZ;
+
+        float rotx = Input.GetAxis("Mouse X");
+        transform.Rotate(new Vector3(0, -1 * rotx * 15, 0));
 
         if (Input.GetKeyDown(KeyCode.Space) && controle.isGrounded)
         {
-            movimento.y += altura; 
+            movimento.y = altura; 
         }
 
         movimento.y += gravidade*Time.deltaTime;
