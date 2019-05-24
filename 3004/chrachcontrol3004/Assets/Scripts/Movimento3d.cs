@@ -9,20 +9,32 @@ public class Movimento3d : MonoBehaviour {
     float gravidade = -10.0f;
     Vector3 movimento = Vector3.zero;
 
+    Transform olhos;
+
     // Use this for initialization
     void Start () {
         controle = GetComponent<CharacterController>();
+        olhos = GetComponentInChildren<Transform>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        transform.localRotation = olhos.localRotation;
+
         float movX = Input.GetAxis("Horizontal");
         float movZ = Input.GetAxis("Vertical");
-        movimento.x = movX;
-        movimento.z = movZ;
-
         float rotx = Input.GetAxis("Mouse X");
-        transform.Rotate(new Vector3(0, -1 * rotx * 15, 0));
+
+        transform.Rotate(new Vector3(0,rotx*45*Time.deltaTime,0));
+
+
+        Vector3 movendo = movX * transform.right + movZ * transform.forward;
+        movimento.x =  movendo.x;
+        movimento.z =  movendo.z;
+
+
+
 
         if (Input.GetKeyDown(KeyCode.Space) && controle.isGrounded)
         {

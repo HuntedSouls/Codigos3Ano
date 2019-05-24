@@ -14,8 +14,6 @@ public class Cameracontrol : MonoBehaviour {
         
         transform.Rotate(-1*Input.GetAxis("Mouse Y") * 90*Time.deltaTime, 0, 0);
 
-       
-
         transform.rotation = Quaternion.Euler(transform.eulerAngles.x,transform.eulerAngles.y,0);
     }
 }

@@ -11,23 +11,10 @@ public class Cameracontrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float rotx = Input.GetAxis("Mouse X");
         float roty = Input.GetAxis("Mouse Y");
-        transform.Rotate(new Vector3(-1*roty*15,0,0));
-        //float finalRotx = Mathf.Clamp(transform.rotation.eulerAngles.x, -80.0f,80.0f);
-        /*float rotX = transform.rotation.eulerAngles.x;
-        if (0 > rotX && rotX > 80)
-        {
-            Debug.Log(rotX.ToString());
-            rotX = 80;
-        }
-        if(rotX < -80)
-        {
+        transform.Rotate(new Vector3(-1*roty*45*Time.deltaTime,0,0));
 
-            rotX = -80;
-        }
-
-        transform.rotation = Quaternion.Euler(rotX, transform.rotation.eulerAngles.y , 0);
-        */
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y , 0);
+        
 	}
 }
