@@ -206,6 +206,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16a54ce7af41e34bb4aea0fa087961e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &990356615
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4274268629987960, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274268629987960, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274268629987960, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 5.7179623
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274268629987960, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274268629987960, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274268629987960, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274268629987960, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274268629987960, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1249606406
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,8 +410,9 @@ GameObject:
   - component: {fileID: 1388750470}
   - component: {fileID: 1388750475}
   - component: {fileID: 1388750474}
+  - component: {fileID: 1388750476}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Personagem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,6 +517,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1388750476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1388750469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74056e74a3ba58748bf6b71fa9579d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bala: {fileID: 1566965228268256, guid: ad09d46d175ae204db6ffd2f42c3feae, type: 2}
 --- !u!1 &1497360160
 GameObject:
   m_ObjectHideFlags: 0
