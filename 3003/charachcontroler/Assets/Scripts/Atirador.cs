@@ -17,8 +17,8 @@ public class Atirador : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.B))
         {
             GameObject tiro = Instantiate(bala);
-            tiro.transform.position = transform.position + transform.forward*2;
-            tiro.GetComponent<Rigidbody>().AddForce(transform.forward*50,ForceMode.Impulse);
+            tiro.transform.position = transform.position + Camera.main.transform.forward*2;
+            tiro.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward*50,ForceMode.Impulse);
         }
 		
 	}

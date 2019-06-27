@@ -234,6 +234,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Atirador.cs" />
     <Compile Include="Assets\Scripts\Cameracontrol.cs" />
+    <Compile Include="Assets\Scripts\Inimigo.cs" />
     <Compile Include="Assets\Scripts\MorreDiabo.cs" />
     <Compile Include="Assets\Scripts\Movimento3d.cs" />
   </ItemGroup>
